@@ -1,39 +1,10 @@
-// var hero = {
-//     name: 'Tim',
-//     hp: 15
-// }; //empty object hero
+var hero = {
+    name: 'Tim',
+    hp: 15
+}; //empty object hero
 
 //hero.name = prompt('what is your name hero');
 //console.log(hero);
-
-//Challenge on dec 14
-//onload  check to see if a hero exists
-//no?
-//prompt the user for their hero name, n save to local sessionStorage
-//hardcode hero hp to equal 15 to local storage
-//yes?
-//greet the hero with d message, continue game
-//output hero name
-
-var greet = document.querySelector('header > span');
-
-if ( !localStorage.getItem('hero') ){
-     localStorage.setItem( 'hero', prompt('Hero name?') );
-     localStorage.setItem( 'hp', 15);
-     greet.textContent = 'Hello, Sir ' + localStorage.getItem('hero');
-     alert('Greetings ' + localStorage.getItem('hero') + ' to DungeonScript.');
-}else{
-     greet.textContent = 'Welcome back, Sir ' + localStorage.getItem('hero');
-}
-
-var hero = {
-    name: localStorage.getItem( 'hero' ),
-    hp: localStorage.getItem( 'hp' )
-  };
-localStorage.setItem('heroObj', JSON.stringify(hero));
-console.log( JSON.parse(localStorage.getItem( 'heroObj' )) );
-console.log( typeof localStorage.getItem('hp') );
-
 
 var monsters = [];
 var monTypes = [ 'dragon','troll','wolf','homonculus','ogre','bat','hipster'];
@@ -50,7 +21,6 @@ function generateMonsters(){
         monsters[i] = new Monster();
         monsters[i].name = monTypes[ Math.floor(Math.random() * monTypes.length) ];
         monsters[i].hp = Math.ceil(Math.random() * 10);
-
       }
       console.log(monsters);
 }
